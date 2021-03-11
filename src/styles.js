@@ -9,12 +9,14 @@ export default makeStyles((theme) => ({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        padding: '20px'
     },
     heading: {
         color: 'rgba(0,183,255, 1)',
     },
     image: {
         marginLeft: '15px',
+        width:'100px'
     },
     [theme.breakpoints.down('sm')]: {
 
