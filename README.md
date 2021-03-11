@@ -16,15 +16,15 @@ In order to run this app, you will need the [server side app.](http:/linktosever
 
 ## Installation
 
-#####Install dependencies
+Install dependencies
 ```sh
 npm install
 ```
 
-#####Start Client
+Start Client
 ```sh
 npm start
 ```
-#####Please check server url in src/api/index.js
+Please check server url in src/api/index.js
 If you're using this app with a hosted server, don't forget to change the server's URL ;) 
 
