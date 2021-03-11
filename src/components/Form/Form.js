@@ -8,7 +8,7 @@ import FileBase from "react-file-base64";
 import useStyles from './styles';
 
 const Form = ({currentId, setCurrentId}) => {
-    const selectedPost = useSelector(state => currentId ? state.posts.find(post => post._id === currentId) : null);
+    const selectedPost = useSelector(state => currentId && state.posts.find(post => post._id === currentId));
 
     const initialState = {
         creator: '',
@@ -21,7 +21,7 @@ const Form = ({currentId, setCurrentId}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    useEffect(() => {
+    useEffect((selectedPost) => {
         if (currentId) setPostData(selectedPost)
     }, [currentId]);
 
