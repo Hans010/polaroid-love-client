@@ -16,12 +16,12 @@ In order to run this app, you will need the [server side app.](http:/linktosever
 
 ## Installation
 
-######Install dependencies
+#####Install dependencies
 ```sh
 npm install
 ```
 
-######Start Client
+#####Start Client
 ```sh
 npm start
 ```
