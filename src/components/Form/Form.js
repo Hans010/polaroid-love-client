@@ -21,9 +21,9 @@ const Form = ({currentId, setCurrentId}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    useEffect((selectedPost) => {
-        if (currentId) setPostData(selectedPost)
-    }, [currentId]);
+    useEffect(() => {
+        if (selectedPost) setPostData(selectedPost)
+    }, [selectedPost]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
