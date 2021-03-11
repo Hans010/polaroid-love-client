@@ -13,6 +13,7 @@ const App = (props) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         dispatch(getPosts())
     }, [dispatch]);
@@ -26,7 +27,8 @@ const App = (props) => {
                 </AppBar>
                 <Grow in>
                     <Container>
-                        <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
+                        <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch"
+                              spacing={3}>
                             <Grid item xs={12} sm={7}>
                                 <Posts setCurrentId={setCurrentId}/>
                             </Grid>
