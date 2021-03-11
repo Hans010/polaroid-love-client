@@ -8,7 +8,7 @@ User can like, edit and delete polaroids.
 
 App was created with MERN stack and is separated between client and server.
 Server is connected to a Mongo cluster.
-In order to run this app, you will need the [server side app.](http:/linktosever.com)
+In order to run this app, you will need the [server side app.](https://github.com/Hans010/polaroid-love-server.git)
 
 ### Currently in development
 - Authentication
