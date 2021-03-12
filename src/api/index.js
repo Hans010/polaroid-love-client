@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 // This will connect your app to your local server
-// const serverUrl = 'http://localhost:5000/posts';
+const serverUrl = 'http://localhost:5000/posts';
 
 // Change this to your server app location
-const serverUrl = `https://mern-project-1-yh2ss.herokuapp.com/posts`;
+// const serverUrl = `https://mern-project-1-yh2ss.herokuapp.com/posts`;
 
 export const fetchPosts = () => axios.get(serverUrl);
 export const createPost = (newPost) => axios.post(serverUrl, newPost)
