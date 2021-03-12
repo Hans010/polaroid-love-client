@@ -2,26 +2,44 @@ import React, {useState} from "react";
 import {Avatar, Button, Container, Grid, Icon, Paper, Typography} from "@material-ui/core";
 import {GoogleLogin} from 'react-google-login';
 import {useDispatch} from "react-redux";
+import {useHistory} from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Input from "./Input";
 import IconGoogle from './IconGoogle';
 
 import useStyles from './styles';
 
+const initialState = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+}
+
 const Auth = () => {
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false);
     const [isSignUp, setIsSignUp] = useState(false);
+    const [formData, setFormData] = useState(initialState);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleShowPassword = () => setShowPassword((prevShowPassword => !prevShowPassword));
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(formData);
+
+        if (isSignUp) {
+            dispatch()
+        } else {
+
+        }
     }
 
-    const handleChange = (e) => {
-
+    const handleChange = (event) => {
+        setFormData({...formData, [event.target.name]:event.target.value});
     }
 
     const switchMode = () => {
@@ -34,6 +52,7 @@ const Auth = () => {
         const token = res?.tokenId;
         try {
             dispatch({type: 'AUTH', data: {result, token}});
+            history.push("/");
         } catch (err) {
             console.log(err);
         }
