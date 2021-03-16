@@ -4,15 +4,18 @@ import Post from "./Post/Post";
 import {useSelector} from "react-redux";
 import useStyles from './styles';
 import jwt from "jsonwebtoken";
+import dotenv from 'dotenv';
+
 
 const Posts = ({setCurrentId}) => {
+    dotenv.config();
     const posts = useSelector((state) => state.posts)
     const classes = useStyles();
     let userId = undefined;
     let tokenExpire = undefined;
     const user = JSON.parse(localStorage.getItem('profile'));
     if (user) {
-        const decodedToken = jwt.decode(user?.token, 'test');
+        const decodedToken = jwt.decode(user?.token, process.env.SECRET_TOKEN);
         userId = decodedToken.sub ?? decodedToken.id;
         tokenExpire = decodedToken.exp;
     }
