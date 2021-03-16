@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {Avatar, Button, Container, Grid, Icon, Paper, Typography} from "@material-ui/core";
+import {Avatar, Button, Container, Grid,Paper, Typography} from "@material-ui/core";
+import {signIn, signUp} from "../../actions/auth";
 import {GoogleLogin} from 'react-google-login';
 import {useDispatch} from "react-redux";
 import {useHistory} from 'react-router-dom';
@@ -29,17 +30,16 @@ const Auth = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formData);
 
         if (isSignUp) {
-            dispatch()
+            dispatch(signUp(formData, history));
         } else {
-
+            dispatch(signIn(formData, history));
         }
     }
 
     const handleChange = (event) => {
-        setFormData({...formData, [event.target.name]:event.target.value});
+        setFormData({...formData, [event.target.name]: event.target.value});
     }
 
     const switchMode = () => {
@@ -80,7 +80,7 @@ const Auth = () => {
                         <Input name="password" label="Enter password" handleChange={handleChange}
                                type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword}/>
                         {isSignUp &&
-                        <Input name="confirmPassword" label="Please confirm password" handleChange={handleChange()}
+                        <Input name="confirmPassword" label="Please confirm password" handleChange={handleChange}
                                type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword}/>}
                     </Grid>
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>

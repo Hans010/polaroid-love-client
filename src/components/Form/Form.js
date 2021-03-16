@@ -11,7 +11,6 @@ const Form = ({currentId, setCurrentId}) => {
     const selectedPost = useSelector(state => currentId && state.posts.find(post => post._id === currentId));
 
     const initialState = {
-        creator: '',
         title: '',
         message: '',
         tags: '',
@@ -20,6 +19,7 @@ const Form = ({currentId, setCurrentId}) => {
     const [postData, setPostData] = useState(initialState);
     const classes = useStyles();
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     useEffect(() => {
         if (selectedPost) setPostData(selectedPost)
@@ -31,10 +31,20 @@ const Form = ({currentId, setCurrentId}) => {
         if(currentId) {
             dispatch(actions.updatePost(currentId, postData))
         } else {
-        dispatch(actions.createPost(postData));
+        dispatch(actions.createPost({...postData, name: user?.result?.name}));
         }
         clear();
     };
+
+    if (!user?.result?.name) {
+        return (
+            <Paper className={classes.paper}>
+                <Typography variant="h6" align="center">
+                    Please sign in to create new polaroids
+                </Typography>
+            </Paper>
+        )
+    }
 
     const clear = () => {
         setPostData(initialState);
@@ -45,8 +55,6 @@ const Form = ({currentId, setCurrentId}) => {
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a Polaroid moment</Typography>
-                <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator}
-                           onChange={(e) => setPostData({...postData, creator: e.target.value})}/>
                 <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title}
                            onChange={(e) => setPostData({...postData, title: e.target.value})}/>
                 <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message}

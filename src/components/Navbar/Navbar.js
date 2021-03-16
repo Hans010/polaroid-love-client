@@ -5,6 +5,7 @@ import {useDispatch} from "react-redux";
 import {useHistory, useLocation} from 'react-router-dom';
 import memories from "../../images/polaroid.jpeg";
 import useStyles from './styles';
+import {decode} from 'jsonwebtoken';
 
 const Navbar = () => {
     const classes = useStyles();
@@ -15,7 +16,11 @@ const Navbar = () => {
 
     useEffect(() => {
         const token = user?.token;
-        //JWT...
+
+        if (token) {
+            const decodedToken = decode(token);
+            if (decodedToken.exp * 1000 < new Date().getTime()) handleLogout();
+        }
 
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);

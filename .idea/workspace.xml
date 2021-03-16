@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80a71a9-a86e-4159-824a-729d643bcc30" name="Default Changelist" comment="finished google auth&#10;started manual login">
-      <change afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
+    <list default="true" id="b80a71a9-a86e-4159-824a-729d643bcc30" name="Default Changelist" comment="finished google auth&#10;added routing to navbar&#10;started manual login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Posts/Post/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Posts/Post/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Posts/Posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Posts/Posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +51,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -62,7 +69,9 @@
       <updated>1615498202540</updated>
       <workItem from="1615498204010" duration="5067000" />
       <workItem from="1615549326342" duration="8754000" />
-      <workItem from="1615569696501" duration="5309000" />
+      <workItem from="1615569696501" duration="5946000" />
+      <workItem from="1615919997519" duration="7916000" />
+      <workItem from="1615928822853" duration="6156000" />
     </task>
     <task id="LOCAL-00001" summary="Removes a bug from Form.js&#10;Corrected server url in api">
       <created>1615500336151</created>
@@ -92,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615502810001</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finished google auth&#10;added routing to navbar&#10;started manual login">
+      <created>1615579207719</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615579207719</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +132,8 @@
     <MESSAGE value="prep for build" />
     <MESSAGE value="updated the useEffect call" />
     <MESSAGE value="finished google auth&#10;started manual login" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished google auth&#10;started manual login" />
+    <MESSAGE value="finished google auth&#10;added routing to navbar&#10;started manual login" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished google auth&#10;added routing to navbar&#10;started manual login" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
