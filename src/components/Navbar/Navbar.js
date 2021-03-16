@@ -14,7 +14,7 @@ const Navbar = () => {
     const history = useHistory();
     const location = useLocation();
 
-    useEffect(() => {
+    useEffect((user, handleLogout) => {
         const token = user?.token;
 
         if (token) {
