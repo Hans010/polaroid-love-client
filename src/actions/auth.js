@@ -4,8 +4,6 @@ import * as api from '../api';
 export const signIn = (formData, history) => async (dispatch) => {
     try {
         const {data} = await api.signIn(formData);
-
-        console.log(data);
         dispatch({type: actionTypes.AUTH, data})
 
         history.push("/");

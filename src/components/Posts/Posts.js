@@ -13,12 +13,16 @@ const Posts = ({setCurrentId}) => {
     const classes = useStyles();
     let userId = undefined;
     let tokenExpire = undefined;
+
+    const {SECRET_TOKEN} = process.env;
+    console.log('from the posts ', SECRET_TOKEN);
+
+
     const user = JSON.parse(localStorage.getItem('profile'));
     if (user) {
         const decodedToken = jwt.decode(user?.token, process.env.SECRET_TOKEN);
         userId = decodedToken.sub ?? decodedToken.id;
         tokenExpire = decodedToken.exp;
-        console.log('from the server...', process.env.SECRET_TOKEN);
     }
 
 
@@ -27,7 +31,8 @@ const Posts = ({setCurrentId}) => {
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {posts.map(post => (
                     <Grid key={post._id} item xs={12} sm={6}>
-                        <Post post={post} setCurrentId={setCurrentId} isThisYourPost={userId === post?.creator} tokenExpire={tokenExpire}/>
+                        <Post post={post} setCurrentId={setCurrentId} isThisYourPost={userId === post?.creator}
+                              tokenExpire={tokenExpire}/>
                     </Grid>
                 ))}
             </Grid>
