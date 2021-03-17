@@ -12,11 +12,11 @@ const Posts = ({setCurrentId}) => {
     let userId = undefined;
     let tokenExpire = undefined;
 
-    console.log('new try... ', process.env.SECRET_TOKEN);
+    console.log('new try... ', process.env.REACT_APP_SECRET_TOKEN);
 
     const user = JSON.parse(localStorage.getItem('profile'));
     if (user) {
-        const decodedToken = jwt.decode(user?.token, process.env.SECRET_TOKEN);
+        const decodedToken = jwt.decode(user?.token, process.env.REACT_APP_SECRET_TOKEN);
         userId = decodedToken.sub ?? decodedToken.id;
         tokenExpire = decodedToken.exp;
     }
