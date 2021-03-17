@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80a71a9-a86e-4159-824a-729d643bcc30" name="Default Changelist" comment="trying to deploy">
+    <list default="true" id="b80a71a9-a86e-4159-824a-729d643bcc30" name="Default Changelist" comment="housekeeping">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Posts/Posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Posts/Posts.js" afterDir="false" />
@@ -64,6 +65,8 @@
       <workItem from="1615569696501" duration="5946000" />
       <workItem from="1615919997519" duration="7916000" />
       <workItem from="1615928822853" duration="8882000" />
+      <workItem from="1615987732090" duration="3131000" />
+      <workItem from="1616012962101" duration="419000" />
     </task>
     <task id="LOCAL-00001" summary="Removes a bug from Form.js&#10;Corrected server url in api">
       <created>1615500336151</created>
@@ -114,7 +117,49 @@
       <option name="project" value="LOCAL" />
       <updated>1615937204339</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="setting to deploy">
+      <created>1615987816560</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615987816560</updated>
+    </task>
+    <task id="LOCAL-00009" summary="setting to deploy">
+      <created>1615987870693</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615987870693</updated>
+    </task>
+    <task id="LOCAL-00010" summary="housekeeping">
+      <created>1615989158582</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615989158582</updated>
+    </task>
+    <task id="LOCAL-00011" summary="housekeeping">
+      <created>1615990160868</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615990160868</updated>
+    </task>
+    <task id="LOCAL-00012" summary="housekeeping">
+      <created>1615990335761</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615990335761</updated>
+    </task>
+    <task id="LOCAL-00013" summary="housekeeping">
+      <created>1615990514863</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1615990514863</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +186,9 @@
     <MESSAGE value="finished google auth&#10;added routing to navbar&#10;started manual login" />
     <MESSAGE value="Added authentication logic.&#10;User can only delete their own posts and like once for post&#10;Token expires after one hour" />
     <MESSAGE value="trying to deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to deploy" />
+    <MESSAGE value="setting to deploy" />
+    <MESSAGE value="housekeeping" />
+    <option name="LAST_COMMIT_MESSAGE" value="housekeeping" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

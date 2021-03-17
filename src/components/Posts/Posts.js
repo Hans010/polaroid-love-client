@@ -4,11 +4,9 @@ import Post from "./Post/Post";
 import {useSelector} from "react-redux";
 import useStyles from './styles';
 import jwt from "jsonwebtoken";
-import dotenv from 'dotenv';
 
 
 const Posts = ({setCurrentId}) => {
-    dotenv.config();
     const posts = useSelector((state) => state.posts)
     const classes = useStyles();
     let userId = undefined;
