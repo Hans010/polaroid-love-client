@@ -18,6 +18,7 @@ const Posts = ({setCurrentId}) => {
         const decodedToken = jwt.decode(user?.token, process.env.SECRET_TOKEN);
         userId = decodedToken.sub ?? decodedToken.id;
         tokenExpire = decodedToken.exp;
+        console.log('from the server...', process.env.SECRET_TOKEN);
     }
 
 
