@@ -8,15 +8,13 @@ import dotenv from 'dotenv';
 
 
 const Posts = ({setCurrentId}) => {
-    dotenv.config().parsed;
+    dotenv.config();
     const posts = useSelector((state) => state.posts)
     const classes = useStyles();
     let userId = undefined;
     let tokenExpire = undefined;
 
-    const secrettoken= process.env.SECRET_TOKEN;
-    console.log('from the posts ', secrettoken);
-
+    console.log('new try... ', process.env.SECRET_TOKEN);
 
     const user = JSON.parse(localStorage.getItem('profile'));
     if (user) {
