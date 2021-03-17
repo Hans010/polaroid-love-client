@@ -14,7 +14,7 @@ const Posts = ({setCurrentId}) => {
     let userId = undefined;
     let tokenExpire = undefined;
 
-    const {SECRET_TOKEN} = process.env;
+    // const {SECRET_TOKEN} = process.env;
     console.log('from the posts ', SECRET_TOKEN);
 
 
