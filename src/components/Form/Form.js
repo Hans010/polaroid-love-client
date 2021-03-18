@@ -53,7 +53,7 @@ const Form = ({currentId, setCurrentId}) => {
                 <TextField name="message" variant="outlined" label="Message" multiline rows={4} fullWidth value={postData.message}
                            onChange={(e) => setPostData({...postData, message: e.target.value})}
                            disabled={!user?.result?.name}/>
-                <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags}
+                <TextField name="tags" variant="outlined" label="Tags (commas,between,tags)" fullWidth value={postData.tags}
                            onChange={(e) => setPostData({...postData, tags: e.target.value.split(',')})}
                            disabled={!user?.result?.name}/>
 
