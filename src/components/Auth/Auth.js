@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import {Avatar, Button, Container, Grid,Paper, Typography} from "@material-ui/core";
+import React, {useEffect, useState} from "react";
+import {Avatar, Button, Container, Grid, Paper, Typography} from "@material-ui/core";
 import {signIn, signUp} from "../../actions/auth";
 import {GoogleLogin} from 'react-google-login';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Input from "./Input";
@@ -23,6 +23,7 @@ const Auth = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isSignUp, setIsSignUp] = useState(false);
     const [formData, setFormData] = useState(initialState);
+    const message = useSelector(state => state.auth.errorMsg);
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -32,7 +33,8 @@ const Auth = () => {
         event.preventDefault();
 
         if (isSignUp) {
-            dispatch(signUp(formData, history));
+            if (formData.password !== formData.confirmPassword) dispatch({type: 'PASS_MISMATCH'});
+            else dispatch(signUp(formData, history));
         } else {
             dispatch(signIn(formData, history));
         }
@@ -107,7 +109,13 @@ const Auth = () => {
                             <Button
                                 onClick={switchMode}>{isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}</Button>
                         </Grid>
+                        {message &&
+                        <Grid item>
+                            <Typography className={classes.errorMsg} variant="body2">{message}</Typography>
+                        </Grid>
+                        }
                     </Grid>
+
                 </form>
             </Paper>
         </Container>

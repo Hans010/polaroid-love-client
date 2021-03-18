@@ -28,23 +28,13 @@ const Form = ({currentId, setCurrentId}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(currentId) {
+        if (currentId) {
             dispatch(actions.updatePost(currentId, postData))
         } else {
-        dispatch(actions.createPost({...postData, name: user?.result?.name}));
+            dispatch(actions.createPost({...postData, name: user?.result?.name}));
         }
         clear();
     };
-
-    if (!user?.result?.name) {
-        return (
-            <Paper className={classes.paper}>
-                <Typography variant="h6" align="center">
-                    Please sign in to create new polaroids
-                </Typography>
-            </Paper>
-        )
-    }
 
     const clear = () => {
         setPostData(initialState);
@@ -53,24 +43,41 @@ const Form = ({currentId, setCurrentId}) => {
 
     return (
         <Paper className={classes.paper}>
-            <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a Polaroid moment</Typography>
+            <Typography className={classes.marginTop20} variant="h6">{currentId ? 'Editing' : 'Creating'} a Polaroid
+                moment</Typography>
+            <form autoComplete="off" noValidate className={`${classes.root} ${classes.form} ${classes.marginTop20}`}
+                  onSubmit={handleSubmit}>
                 <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title}
-                           onChange={(e) => setPostData({...postData, title: e.target.value})}/>
-                <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message}
-                           onChange={(e) => setPostData({...postData, message: e.target.value})}/>
+                           onChange={(e) => setPostData({...postData, title: e.target.value})}
+                           disabled={!user?.result?.name}/>
+                <TextField name="message" variant="outlined" label="Message" multiline rows={4} fullWidth value={postData.message}
+                           onChange={(e) => setPostData({...postData, message: e.target.value})}
+                           disabled={!user?.result?.name}/>
                 <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags}
-                           onChange={(e) => setPostData({...postData, tags: e.target.value.split(',')})}/>
+                           onChange={(e) => setPostData({...postData, tags: e.target.value.split(',')})}
+                           disabled={!user?.result?.name}/>
+
+                {user?.result?.name &&
                 <div className={classes.fileInput}><FileBase type="file" multiple={false}
                                                              onDone={({base64}) => setPostData({
                                                                  ...postData,
                                                                  selectedFile: base64
                                                              })}/>
                 </div>
+                }
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit"
-                        fullWidth>Submit</Button>
-                <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                        fullWidth disabled={!user?.result?.name}>Submit</Button>
+                <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth
+                        disabled={!user?.result?.name}>Clear</Button>
             </form>
+            <br/>
+            {!user?.result?.name &&
+            <div className={classes.marginTop20}>
+                <Typography variant="h6" align="center">
+                    Please sign in to create new polaroids
+                </Typography>
+            </div>
+            }
         </Paper>
     );
 }

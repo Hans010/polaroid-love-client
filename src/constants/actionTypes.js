@@ -5,5 +5,8 @@ export const actionTypes = {
     DELETE: 'DELETE',
     LIKE: 'LIKE',
     AUTH: 'AUTH',
-    LOGOUT: 'LOGOUT'
+    LOGOUT: 'LOGOUT',
+    BAD_AUTH: 'BAD_AUTH',
+    PASS_MISMATCH: 'PASS_MISMATCH',
+    USER_EXISTS: 'USER_EXISTS'
 }
