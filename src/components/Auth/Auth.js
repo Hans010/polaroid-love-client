@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Avatar, Button, Container, Grid, Paper, Typography} from "@material-ui/core";
 import {signIn, signUp} from "../../actions/auth";
 import {GoogleLogin} from 'react-google-login';
