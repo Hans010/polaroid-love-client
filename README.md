@@ -1,7 +1,8 @@
 # Polaroid Love (Client) 
 
 _This project is part of the **"You have to start somewhere"** React Project Series_
-You can [check it out here](https://polaroid-love.netlify.app/)
+
+You can [check it out here](https://polaroid-love.netlify.app/){:target="_blank"}
 
 A simple project with "polaroids" created by users.
 New polaroids can be created with a form.
