@@ -2,7 +2,7 @@
 
 _This project is part of the **"You have to start somewhere"** React Project Series_
 
-You can [check it out here](https://polaroid-love.netlify.app/){:target="_blank"}
+You can [check it out here](https://polaroid-love.netlify.app/)
 
 A simple project with "polaroids" created by users.
 New polaroids can be created with a form.
